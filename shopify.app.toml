@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "73f01e48def240abbdb09a192f83bc39"
-name = "Test-Reviewss"
+client_id = "9f96861cc1e6d7a0d09c67c74f24d203"
+name = "ReviewsApp-Practice"
 application_url = "https://example.com"
 embedded = true
 
@@ -12,17 +12,28 @@ include_config_on_deploy = true
 [webhooks]
 api_version = "2026-07"
 
-  [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
-
-  [[webhooks.subscriptions]]
-  topics = [ "app/scopes_update" ]
-  uri = "/webhooks/app/scopes_update"
+# Commented out for --use-localhost dev (Shopify rejects localhost webhook URIs).
+# Re-enable when deploying with a public URL (ngrok or production host).
+#
+#  [[webhooks.subscriptions]]
+#  topics = [ "app/uninstalled" ]
+#  uri = "/webhooks/app/uninstalled"
+#
+#  [[webhooks.subscriptions]]
+#  topics = [ "app/scopes_update" ]
+#  uri = "/webhooks/app/scopes_update"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_metaobject_definitions,write_metaobjects,write_products"
+scopes = "read_products,write_app_proxy,write_metaobject_definitions,write_metaobjects,write_products"
+
+# Comment out [app_proxy] for reliable admin dev: npm run dev
+# Uncomment only for storefront widget testing (see package.json dev:storefront)
+#
+[app_proxy]
+url = "/apps/reviews"
+prefix = "apps"
+subpath = "reviews"
 
 [auth]
 redirect_urls = [ "https://example.com/api/auth" ]

@@ -32,3 +32,20 @@ model Session {
   refreshToken        String?
   refreshTokenExpires DateTime?
 }
+
+model Review {
+  id           String   @id @default(cuid())
+  shop         String
+  productId    String
+  productTitle String?
+  rating       Int
+  title        String?
+  body         String
+  authorName   String
+  status       String   @default("pending")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([shop, productId])
+  @@index([shop, status])
+}

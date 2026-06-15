@@ -1,0 +1,17 @@
+{
+  "reviews": {
+    "heading": "Customer reviews",
+    "write_review": "Write a review",
+    "your_name": "Your name",
+    "rating": "Rating",
+    "title": "Title (optional)",
+    "review": "Your review",
+    "submit": "Submit review",
+    "submitting": "Submitting...",
+    "no_reviews": "No reviews yet. Be the first to review this product!",
+    "thank_you": "Thank you! Your review is pending approval.",
+    "error": "Unable to load reviews. Please try again later.",
+    "stars": "{{ count }} out of 5",
+    "based_on": "Based on {{ count }} reviews"
+  }
+}

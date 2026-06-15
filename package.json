@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "react-router build",
-    "dev": "shopify app dev",
+    "dev": "shopify app dev --use-localhost --store=my-dev-store-f0pmcwru.myshopify.com",
+    "dev:storefront": "shopify app dev --store=my-dev-store-f0pmcwru.myshopify.com --tunnel-url=$TUNNEL_URL",
+    "tunnel": "npx cloudflared tunnel --protocol http2 --url http://localhost:3000",
     "config:link": "shopify app config link",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
